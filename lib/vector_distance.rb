@@ -25,4 +25,18 @@ class MyVector < Vector
     distance_stash
   end
 
+  def +(a)
+    vector = self.covector.to_a
+    for v in (0..vector.length-1)
+      vector[v] += a
+    end
+    Vector[vector.flatten!]
+  end
+
+  def <<(a)
+    vector = self.covector.to_a
+    vector << a
+    Vector[vector.flatten!]
+  end
+
 end
