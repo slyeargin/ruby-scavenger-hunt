@@ -25,12 +25,12 @@ class MyVectorTest < MiniTest::Unit::TestCase
 
   def test_calculate_angle_in_rad_class
     angle = MyVector.calculate_angle(@v, @v3)
-    assert_equal(0.6061378223872939, angle)
+    assert_equal((Math::PI/4).round(10), angle)
   end
 
   def test_calculate_angle_in_rad_instance
     angle = @v.calculate_angle(@v3)
-    assert_equal(0.6061378223872939, angle)
+    assert_equal((Math::PI/4).round(10), angle)
   end
 
 end

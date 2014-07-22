@@ -26,13 +26,13 @@ class MyVector < Vector
   end
 
   def calculate_angle(other_vector)
-    theta = (self.inner_product other_vector)/((Math.sqrt(self[1]**2 + other_vector[1]**2)) + (Math.sqrt(self[0]**2 + other_vector[0]**2)))
-    radians = Math.acos(theta)
+    numerator = self.inner_product(other_vector)
+    denominator = self.magnitude * other_vector.magnitude
+    Math::acos(numerator/denominator).round(10)
   end
 
   def self.calculate_angle(v1, v2)
-    theta = (v1.inner_product v2)/((Math.sqrt(v1[1]**2 + v2[1]**2)) + (Math.sqrt(v1[0]**2 + v2[0]**2)))
-    radians = Math.acos(theta)
+    v1.calculate_angle(v2)
   end
 
   def +(a)
