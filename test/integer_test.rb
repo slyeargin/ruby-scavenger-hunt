@@ -8,7 +8,7 @@ class FactorsTest < MiniTest::Unit::TestCase
   end
 
   def test_factors
-    answer = [1,2,3,4,6,12]
+    answer = [2,3,4,6]
     integer = 12
     assert_equal(answer, integer.factors)
   end
